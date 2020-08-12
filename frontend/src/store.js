@@ -1,11 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import Cookie from 'js-cookie';
 import { carroListaReducer } from './reducers/carroReducer';
+import filterReducer from './reducers/filter';
 
 
 const reducer = combineReducers({
   carrosLista: carroListaReducer,
+  filter: filterReducer,
 })
 
 

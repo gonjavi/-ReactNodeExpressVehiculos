@@ -40,8 +40,11 @@ code {
 }
 .carro {
   padding: 2rem;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 ul {
   list-style: none;
+  display: inline;
 }

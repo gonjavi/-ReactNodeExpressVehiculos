@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import { traerCarros } from '../actions/carroAction';
 import { useSelector, useDispatch } from 'react-redux';
-import Carros from './Carros';
+import CarroLista from '../contenedores/CarroLista';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function App() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />      
     </Navbar>
     <main className="container main">
-      <Carros />
+      <CarroLista />
       
     </main>
     <footer className="footer">
