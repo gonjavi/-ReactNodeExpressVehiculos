@@ -1,4 +1,3 @@
-import carrosRutas from './routes/carrosRutas';
 const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');

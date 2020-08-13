@@ -48,7 +48,12 @@ class CarroLista extends React.Component {
             <h1 className="title">Automoviles</h1>
           </Col>
         </Row>
-        <Row>
+       <Row>
+        <Col xs={12} md={12} >         
+          <NavLink to="/grafica"><h5 className="back">Ir a graficas</h5></NavLink>
+        </Col>
+      </Row>
+        <Row className='mt-2'>
           <Col xs={12} md={5} lg={4}>
             <MarcaFilter handleFilterChange={this.handleFilterChange} />
           </Col>

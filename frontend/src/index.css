@@ -39,12 +39,38 @@ code {
   margin-right: auto;
 }
 .carro {
-  padding: 2rem;
+  padding-left: 2rem;
   width: 100%;
   margin-bottom: 20px;
+  height: auto;  
 }
 
 ul {
   list-style: none;
-  display: inline;
+  display: inline;   
+}
+ul.titulo {
+  text-align:center;
+}
+ul.titulo li {
+   display: table;
+  margin:0px auto 0px auto; 
+  height: 18px;
+  opacity: 0.8;
+  font-family: Montserrat, Arial, Verdana, Tahoma, sans-serif;
+  font-size: px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-three);
+}
+
+.progress {
+  margin-left: 20px;
+}
+
+.cuadro {
+  align-items: center;
 }

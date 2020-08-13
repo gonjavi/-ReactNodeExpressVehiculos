@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { registrar } from '../actions/registrar';
 import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 

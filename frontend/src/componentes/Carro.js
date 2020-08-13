@@ -10,19 +10,21 @@ const Carro = props => {
   
   return (            
     <div key={id} className="carro">
+      <div className="cuadro">
+        <ul className="titulo">
+          <li> Linea: {linea}</li>
+          <li> Marca: {marca}</li> 
+          <li> {modelo}</li>   
+        </ul>
+      </div>
       <img 
         className='picture'   
         alt={linea}
-        width = '60%'
+        width = '50%'
         height = '60%'
         src={`data:image/png;base64,${FOTO}`}
       />
-      <ul>
-        <li> linea: {linea}</li>
-        <li> Marca: {marca}</li>
-        <li> Modelo: {modelo}</li>
-        <li> Color: {color}</li>
-      </ul>
+     
     </div>
   );   
 };

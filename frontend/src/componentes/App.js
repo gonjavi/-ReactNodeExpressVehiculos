@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import { traerCarros } from '../actions/carroAction';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import CarroLista from '../contenedores/CarroLista';
+import Grafica from './Grafica';
 
 function App() {
   const dispatch = useDispatch();
@@ -13,7 +15,7 @@ function App() {
 
     }
     
-  }, []);
+  }, );
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
@@ -21,7 +23,12 @@ function App() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />      
     </Navbar>
     <main className="container main">
-      <CarroLista />
+    <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={CarroLista} />
+          <Route path="/grafica" component={Grafica} />
+        </Switch>
+      </BrowserRouter>
       
     </main>
     <footer className="footer">
