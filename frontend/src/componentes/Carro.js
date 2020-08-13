@@ -6,7 +6,7 @@ const Carro = props => {
    vehiculo
   } = props;
     
-  const { id, linea, marca, modelo, color, FOTO } = vehiculo;
+  const { id, linea, marca, modelo, FOTO } = vehiculo;
   
   return (            
     <div key={id} className="carro">
