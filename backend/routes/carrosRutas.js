@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+const bodyparser = require('body-parser');
+
+app.use(bodyparser.json());
 
 app.post('/carro/nuevo',function(req,res){
   const vehiculo={
@@ -36,7 +39,4 @@ app.post('/carro/nuevo',function(req,res){
     }
   });
 });
-});
-app.listen(5000, function () {
-  console.log('Server is running..');
 });

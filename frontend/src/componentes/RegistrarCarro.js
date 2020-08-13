@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { registrar } from '../actions/registrar';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 function RegistrarCarro(props) {
   const [linea, setLinea] = useState('');
@@ -25,6 +29,7 @@ function RegistrarCarro(props) {
   const submitHandler = e => {
     e.preventDefault();
     dispatch(registrar(linea, marca, modelo, color, Foto));
+    console.log(linea)
   }
   const handleImage = e => {
     const Imagen = e.target.files[0];
@@ -43,43 +48,65 @@ function RegistrarCarro(props) {
   
  
   return (
-  <div className="form">
-    <form onSubmit={submitHandler}>
-      <ul className="form-container">
-        <li>
-          <h2>Registrar Vehiculo</h2>
-        </li>
-        <li>
-          <label htmlFor="linea">
-            linea
-          </label>
-          <input type="text" name="linea" id="linea" onChange={(e) => setLinea(e.target.value)} />
-        </li>
-        <li>
-          <label htmlFor="marca">
-            Marca
-          </label>
-          <input type="text" name="marca" id="marca" onChange={(e) => setMarca(e.target.value)} />
-        </li>
-        <li>
-          <label htmlFor="modelo">Modelo</label>
-          <input type="text" name="modelo" id="modelo" onChange={(e) => setModelo(e.target.value)} />
-        </li>
-        <li>
-          <label htmlFor="color">Color</label>
-          <input type="" name="color" id="color" onChange={(e) => setColor(e.target.value)} />
-        </li>
-        <li>
-          <label htmlFor="Foto">Foto</label>
-          <input type="file" name="Foto" id="Foto" onChange={handleImage} />
-        </li>
-        <li>
-          <button type="submit" className="button primary">Registrar</button>
-        </li>              
-      </ul>
-    </form>
+  <Form onSubmit={submitHandler}>
+    <Form.Row>      
+        <Form.Group as={Col} md="3" controlId="validationCustom01">
+          <Form.Label>Linea</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="Pathfinder"
+            onChange={(e) => setLinea(e.target.value)}
+          />         
+        </Form.Group>
+        <Form.Group as={Col} md="3" controlId="validationCustom01">
+          <Form.Label>Marca</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="Nissan"
+            onChange={(e) => setMarca(e.target.value)}
+          />         
+        </Form.Group>
+        
+        <Form.Group as={Col} md="3" controlId="validationCustom01">
+          <Form.Label>Modelo</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="2020"
+            onChange={(e) => setModelo(e.target.value)}
+          />         
+        </Form.Group>
+        <Form.Group as={Col} md="3" controlId="validationCustom01">
+          <Form.Label>Color</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="Rojo"
+            onChange={(e) => setColor(e.target.value)}
+          />         
+        </Form.Group> 
+        <Form.Group as={Col} md="3">
+            <Form.File
+              className="position-relative"
+              required
+              name="file"
+              label="Foto"
+              onChange={handleImage}
+              id="validationFormik107"
+              feedbackTooltip
+            />
+        </Form.Group>
+      </Form.Row>
+      <Form.Row>       
+        <Form.Group as={Col} md="3">
+          <Button type="submit">Registrar</Button>
+        </Form.Group>                   
+      
+    </Form.Row>
    
-  </div>);
+  </Form>);
 }
 
 export default RegistrarCarro;
