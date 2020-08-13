@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import { CARROS_LIST_SUCCESS, CARROS_LIST_REQUEST, CARROS_LIST_FAIL } from '../constantes/carroConstantes';
 
 

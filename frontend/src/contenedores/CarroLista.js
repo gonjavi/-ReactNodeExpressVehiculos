@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import { changeFilter } from '../actions/filter';
 import MarcaFilter from '../componentes/MarcaFilter';
 import Carro from '../componentes/Carro';
+import RegistrarCarro from '../componentes/RegistrarCarro';
 
 class CarroLista extends React.Component {
   constructor(props) {
@@ -54,6 +55,9 @@ class CarroLista extends React.Component {
         </Row>
         <Row xs={12}>
           {NuevaCarroLista}
+        </Row>
+        <Row>
+          <RegistrarCarro />
         </Row>
       </Container>
     );

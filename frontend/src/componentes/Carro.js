@@ -6,7 +6,8 @@ const Carro = props => {
    vehiculo
   } = props;
     
-  const { id, linea, marca, modelo, color, Foto } = vehiculo;
+  const { id, linea, marca, modelo, color, FOTO } = vehiculo;
+  
   return (            
     <div key={id} className="carro">
       <img 
@@ -14,7 +15,7 @@ const Carro = props => {
         alt={linea}
         width = '60%'
         height = '60%'
-        src={Foto}
+        src={`data:image/png;base64,${FOTO}`}
       />
       <ul>
         <li> linea: {linea}</li>

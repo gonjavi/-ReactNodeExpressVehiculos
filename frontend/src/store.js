@@ -2,11 +2,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { carroListaReducer } from './reducers/carroReducer';
 import filterReducer from './reducers/filter';
+import { carroRegistroReducer } from './reducers/carroRegistroReducer';
 
 
 const reducer = combineReducers({
   carrosLista: carroListaReducer,
   filter: filterReducer,
+  carroRegistro: carroRegistroReducer,
 })
 
 
