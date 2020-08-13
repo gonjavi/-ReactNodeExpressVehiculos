@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { registrar } from '../actions/registrar';
+import imageToBase64 from 'image-to-base64';
 
 function RegistrarCarro(props) {
   const [linea, setLinea] = useState('');
@@ -10,7 +11,7 @@ function RegistrarCarro(props) {
   const [Foto, setFoto] = useState('');
   const carroRegistro = useSelector(state => state.carroRegistro);
   const { carroInfo } = carroRegistro;
-
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,8 +26,23 @@ function RegistrarCarro(props) {
   const submitHandler = e => {
     e.preventDefault();
     dispatch(registrar(linea, marca, modelo, color, Foto));
+    console.log(Foto)
   }
+  const handleImage = e => {
+    const Imagen = e.target.files[0];
+    crearImagenBase64(Imagen);
+    
+  }
+  const crearImagenBase64 = file => {
+    const reader = new FileReader();
 
+    reader.onload = e => {
+      setFoto(e.target.result);
+    };
+    
+    reader.readAsBinaryString(file);
+  }
+  
  
   return (
   <div className="form">
@@ -57,7 +73,7 @@ function RegistrarCarro(props) {
         </li>
         <li>
           <label htmlFor="Foto">Foto</label>
-          <input type="file" name="Foto" id="Foto" onChange={(e) => setColor(e.target.value)} />
+          <input type="file" name="Foto" id="Foto" onChange={handleImage} />
         </li>
         <li>
           <button type="submit" className="button primary">Registrar</button>
