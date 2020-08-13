@@ -40,7 +40,7 @@ function RegistrarCarro(props) {
       setFoto(e.target.result);
     };
     
-    reader.readAsBinaryString(file);
+    reader.readAsDataURL(file);
   }
   
  
