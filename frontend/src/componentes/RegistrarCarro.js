@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { registrar } from '../actions/registrar';
-import imageToBase64 from 'image-to-base64';
 
 function RegistrarCarro(props) {
   const [linea, setLinea] = useState('');
@@ -26,7 +25,6 @@ function RegistrarCarro(props) {
   const submitHandler = e => {
     e.preventDefault();
     dispatch(registrar(linea, marca, modelo, color, Foto));
-    console.log(Foto)
   }
   const handleImage = e => {
     const Imagen = e.target.files[0];

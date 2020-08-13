@@ -30,14 +30,14 @@ class CarroLista extends React.Component {
     if (filter === 'Todos') {
       NuevaCarroLista = recordset.map(
         vehiculo => (
-          <Carro vehiculo={vehiculo} />
+          <Carro vehiculo={vehiculo} key={vehiculo.id} />
         ),
       );
     } else {
       const carroListaFiltered = recordset.filter(carro => carro.marca === filter);
       NuevaCarroLista = carroListaFiltered.map(
         vehiculo => (
-          <Carro vehiculo={vehiculo} />        
+          <Carro vehiculo={vehiculo} key={vehiculo.id} />        
         ),
       );
     }
