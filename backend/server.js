@@ -10,10 +10,34 @@ app.use((req, res, next) => {
     next();
 });
 
-var bodyParser = require('body-parser');
-app.use(bodyParser.json({limit: "50mb"}));
-app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
+app.use(bodyparser.json({limit: "50mb"}));
+app.use(bodyparser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
 
+/*  borrar carros */
+app.delete("/carro/borrar", (req, res) => { 
+  
+    const id = req.body.id;   
+  
+    const connection = mysql.createConnection({
+        user: 'sa',
+        password: 'jgjggjgj.P0',
+        server: 'localhost', 
+        database: 'carros' 
+    });
+  
+    const queryString = "DELETE vehiculos WHERE id = ?";
+    connection.query(queryString, [id], (err, results, fields) => {
+      if (err) {
+        console.log("Could not delete" + err);
+        res.sendStatus(500);
+        return;
+      }
+      console.log("Carro borrado");
+      res.end();
+    });
+});
+
+/*  guardar carros sql */
 app.post('/carro/nuevo',function(req,res){
   let vehiculo={
   "linea":req.body.linea,
@@ -41,6 +65,7 @@ app.post('/carro/nuevo',function(req,res){
   });
 });
 
+/*  enviar carros */
 app.get('/api/carros', function (req, res) {
    
     const sql = require("mssql");
