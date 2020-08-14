@@ -3,17 +3,15 @@ import PropTypes from 'prop-types';
 import BorrarCarroApi from '../actions/borrarCarro';
 
 const Carro = props => {
-  const [remove, setRemove] = useState(false);
- 
   const { 
    vehiculo
   } = props;
     
   const { id, linea, marca, modelo, FOTO } = vehiculo;
   
-  function borrarCarro() {
-    setRemove(true);
+  function borrarCarro() {    
      BorrarCarroApi(id);
+     window.location.reload(false);
   } 
 
   return (            

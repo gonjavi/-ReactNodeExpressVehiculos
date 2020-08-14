@@ -14,27 +14,26 @@ app.use(bodyparser.json({limit: "50mb"}));
 app.use(bodyparser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
 
 /*  borrar carros */
-app.delete("/carro/borrar", (req, res) => { 
+app.delete("/carro/borrar/:id", (req, res) => { 
   
-    const id = req.body.id;   
-  
-    const connection = mysql.createConnection({
+    const id = req.params.id;    
+    const sql = require("mssql");    
+    const config = {
         user: 'sa',
         password: 'jgjggjgj.P0',
         server: 'localhost', 
-        database: 'carros' 
-    });
+        database: 'carros',
+    };
   
-    const queryString = "DELETE vehiculos WHERE id = ?";
-    connection.query(queryString, [id], (err, results, fields) => {
-      if (err) {
-        console.log("Could not delete" + err);
-        res.sendStatus(500);
-        return;
-      }
-      console.log("Carro borrado");
-      res.end();
-    });
+    const connection = new sql.ConnectionPool(config, function(err) {
+        var r = new sql.Request(connection);
+        r.multiple = true;
+        r.query(`DELETE FROM vehiculos WHERE id = ${id}`, function(err, recordsets) {
+           
+            connection.close();
+        });
+      });
+   
 });
 
 /*  guardar carros sql */
@@ -55,7 +54,7 @@ app.post('/carro/nuevo',function(req,res){
       database: 'carros' 
   };
   
-  var connection = new sql.ConnectionPool(config, function(err) {
+  const connection = new sql.ConnectionPool(config, function(err) {
     var r = new sql.Request(connection);
     r.multiple = true;
     r.query(`INSERT INTO vehiculos (linea, marca, modelo, color, FOTO) VALUES ('${vehiculo.linea}', '${vehiculo.marca}' , '${vehiculo.modelo}', '${vehiculo.color}','${vehiculo.foto}')`, function(err, recordsets) {

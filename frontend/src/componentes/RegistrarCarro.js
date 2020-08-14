@@ -41,7 +41,6 @@ function RegistrarCarro(props) {
     };
     
     reader.readAsDataURL(file);
-    console.log(reader)
   }
   
  

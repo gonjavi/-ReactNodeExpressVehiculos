@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 
 const MarcaFilter = props => {
-  const [category, setCategory] = useState('All');
+  const [category, setCategory] = useState('Todos');
 
   function handleChange(e) {
     const { target: { value, name } } = e;
