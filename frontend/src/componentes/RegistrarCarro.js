@@ -26,9 +26,7 @@ function RegistrarCarro(props) {
   }, [carroInfo]);
 
   const submitHandler = e => {
-    e.preventDefault();
     dispatch(registrar(linea, marca, modelo, color, Foto));
-    console.log(linea)
   }
   const handleImage = e => {
     const Imagen = e.target.files[0];
@@ -43,6 +41,7 @@ function RegistrarCarro(props) {
     };
     
     reader.readAsDataURL(file);
+    console.log(reader)
   }
   
  

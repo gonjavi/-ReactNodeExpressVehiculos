@@ -22,7 +22,7 @@ const Carro = props => {
         alt={linea}
         width = '50%'
         height = '60%'
-        src={`data:image/png;base64,${FOTO}`}
+        src={FOTO}
       />
      
     </div>

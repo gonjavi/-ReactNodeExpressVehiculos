@@ -10,47 +10,36 @@ app.use((req, res, next) => {
     next();
 });
 
-
-app.use(bodyparser.json());
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
 
 app.post('/carro/nuevo',function(req,res){
-  const vehiculo={
+  let vehiculo={
   "linea":req.body.linea,
   "marca":req.body.marca,
   "modelo":req.body.modelo,
   "color":req.body.color,
-  "Foto":req.body.Foto,
+  "foto":req.body.Foto,
   }
-
-  const sql = require("mssql");
-      
+  
+  const sql = require("mssql");      
   const config = {
       user: 'sa',
       password: 'jgjggjgj.P0',
       server: 'localhost', 
       database: 'carros' 
   };
-
-  sql.connect(config, function (err) {
-    connection.query('INSERT INTO vehiculos SET ?',vehiculo, function (error, results, fields) {
-      if (error) {
-        console.log("error ocurred",error);
-        res.send({
-        "code":400,
-        "failed":"error ocurred"
-      })
-      }else{
-        console.log('The solution is: ', results);
-        res.send({
-        "code":200,
-        "success":"vehiculo registrado satisfactoriamente"
-      });
-    }
+  
+  var connection = new sql.ConnectionPool(config, function(err) {
+    var r = new sql.Request(connection);
+    r.multiple = true;
+    r.query(`INSERT INTO vehiculos (linea, marca, modelo, color, FOTO) VALUES ('${vehiculo.linea}', '${vehiculo.marca}' , '${vehiculo.modelo}', '${vehiculo.color}','${vehiculo.foto}')`, function(err, recordsets) {
+       
+        connection.close();
+    });
   });
 });
-});
-
-
 
 app.get('/api/carros', function (req, res) {
    
@@ -60,7 +49,7 @@ app.get('/api/carros', function (req, res) {
         user: 'sa',
         password: 'jgjggjgj.P0',
         server: 'localhost', 
-        database: 'carros' 
+        database: 'carros',
     };
     
     sql.connect(config, function (err) {
