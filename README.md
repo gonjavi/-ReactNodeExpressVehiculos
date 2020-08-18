@@ -9,7 +9,7 @@ Este es un proyecto full-stack de registro de automoviles, utilizando React, Red
 - npm 6.14.7
 - node 14.8.0
 
-### Setup
+### Configuración
 
 #### Backend
 - Correr $npm install    en el directorio raiz  para instalar todas las dependencias de el package.json 
@@ -31,7 +31,7 @@ create table vehiculos (
 
 - En el archivo backend/server.js, cambiar las credenciales de usuario en const config.
 
-### Frontend
+#### Frontend
 - Entre al folder frontend en el terminal por medio de cd frontend
 - Una vez dentro del folder corra $npm install
 - Seguido de $npm start
