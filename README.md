@@ -49,7 +49,6 @@ create table vehiculos (
 - React 16.13.1
 - Redux 4.0.5
 - React-Bootstrap 1.0.1
-- Bootstrap 4.5.0
 - Visual Code
 
 
