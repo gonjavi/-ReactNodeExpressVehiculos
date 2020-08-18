@@ -57,7 +57,7 @@ app.post('/carro/nuevo',function(req,res){
   const connection = new sql.ConnectionPool(config, function(err) {
     var r = new sql.Request(connection);
     r.multiple = true;
-    r.query(`INSERT INTO vehiculos (linea, marca, modelo, color, FOTO) VALUES ('${vehiculo.linea}', '${vehiculo.marca}' , '${vehiculo.modelo}', '${vehiculo.color}','${vehiculo.foto}')`, function(err, recordsets) {
+    r.query(`INSERT INTO vehiculos (linea, marca, modelo, color, foto) VALUES ('${vehiculo.linea}', '${vehiculo.marca}' , '${vehiculo.modelo}', '${vehiculo.color}','${vehiculo.foto}')`, function(err, recordsets) {
        
         connection.close();
     });

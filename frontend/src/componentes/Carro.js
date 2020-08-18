@@ -7,7 +7,7 @@ const Carro = props => {
    vehiculo
   } = props;
     
-  const { id, linea, marca, modelo, FOTO } = vehiculo;
+  const { id, linea, marca, modelo, foto } = vehiculo;
   
   function borrarCarro() {    
      BorrarCarroApi(id);
@@ -29,7 +29,7 @@ const Carro = props => {
         alt={linea}
         width = '50%'
         height = '60%'
-        src={FOTO}
+        src={foto}
       />
      
     </div>
