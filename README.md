@@ -5,7 +5,7 @@ Este es un proyecto full-stack de registro de automoviles, utilizando React, Red
 ![screenshot](./screenshot.png)
 
 
-### Prerequisites
+### Prerequisitos
 - npm 6.14.7
 - node 14.8.0
 
@@ -16,14 +16,35 @@ Este es un proyecto full-stack de registro de automoviles, utilizando React, Red
 - Corra en backend en la: $npm start
 - El backend iniciará en el pruerto 5000, podrá ser visto en el terminal.
 
+Crear la base de datos llamada carros SQLServer y luego crear la tabla ejecutando en Azure Data studio:
+
+![screenshot](./creartabla.png)
+
+create table vehiculos (
+    id int PRIMARY KEY IDENTITY(1,1),
+    linea VARCHAR (50) NOT NULL,
+    marca VARCHAR (50) NOT NULL,
+    modelo VARCHAR (50),
+    color VARCHAR (50),
+    foto text
+);
+
+- En el archivo backend/server.js, cambiar las credenciales de usuario en const config.
+
 ### Frontend
 - Entre al folder frontend en el terminal por medio de cd frontend
 - Una vez dentro del folder corra $npm install
 - Seguido de $npm start
 - La apliación abrirá en el navegador en el puerto 3000
 
+### Registrar nuevo vehiculo
 
-## Built With
+- En la parte final de la pantalla pueden agregarse nuevos vehiculos.
+
+![screenshot](./registrar.png)
+
+
+## Construido con
 
 - React 16.13.1
 - Redux 4.0.5
@@ -32,7 +53,7 @@ Este es un proyecto full-stack de registro de automoviles, utilizando React, Red
 - Visual Code
 
 
-## Author:
+## Autor:
 👤 **Gonza Javier Mancilla**
 
 - Github: [@gonjavi](https://github.com/gonjavi)
@@ -40,14 +61,14 @@ Este es un proyecto full-stack de registro de automoviles, utilizando React, Red
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contribuciones, problemas y solicitud de caracteristicas son bienvenidas!
 
 
-## Show your support
+## Muestra tu apoyo
 
-Give a ⭐️ if you like this project!
+Da una ⭐️ si te gusta el proyecto!
 
 
-## 📝 License
+## 📝 Licencia
 
-This project is [MIT](lic.url) licensed.
+Este proyecto tiene licencia [MIT](lic.url).
