@@ -59,7 +59,7 @@ create table vehiculos (
 - Github: [@gonjavi](https://github.com/gonjavi)
 - Linkedin: [@g-javier-mancilla](https://www.linkedin.com/in/g-mancillla)
 
-## 🤝 Contributing
+## 🤝 Contribución
 
 Contribuciones, problemas y solicitud de caracteristicas son bienvenidas!
 
