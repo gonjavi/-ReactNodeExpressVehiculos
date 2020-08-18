@@ -46,7 +46,8 @@ function RegistrarCarro(props) {
  
   return (
   <Form onSubmit={submitHandler}>
-    <Form.Row>      
+    <h5>Registrar Nuevo Automovil</h5>    
+    <Form.Row>         
         <Form.Group as={Col} md="3" controlId="validationCustom01">
           <Form.Label>Linea</Form.Label>
           <Form.Control
