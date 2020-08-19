@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import { carroListaReducer } from './reducers/carroReducer';
 import filterReducer from './reducers/filter';
 import { carroRegistroReducer } from './reducers/carroRegistroReducer';
+import { carroActualizarReducer } from './reducers/carroActualizarReducer';
 
 
 const reducer = combineReducers({
   carrosLista: carroListaReducer,
   filter: filterReducer,
   carroRegistro: carroRegistroReducer,
+  carroActualizado: carroActualizarReducer,
 })
 
 

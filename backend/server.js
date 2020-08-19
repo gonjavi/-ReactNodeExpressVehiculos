@@ -64,6 +64,44 @@ app.post('/carro/nuevo',function(req,res){
   });
 });
 
+/*  actualizar carros sql */
+app.put('/carro/actualizar/:id',function(req,res){
+
+    const id = req.params.id;  
+  
+    let vehiculo={
+    "linea":req.body.linea,
+    "marca":req.body.marca,
+    "modelo":req.body.modelo,
+    "color":req.body.color,
+    "foto":req.body.Foto,
+    }
+    
+    const sql = require("mssql");      
+    const config = {
+        user: 'sa',
+        password: 'jgjggjgj.P0',
+        server: 'localhost', 
+        database: 'carros' 
+    };
+    
+    const connection = new sql.ConnectionPool(config, function(err) {
+      var r = new sql.Request(connection);
+      r.multiple = true;
+      r.query(`UPDATE vehiculos 
+      SET linea = '${vehiculo.linea}',
+          marca = '${vehiculo.marca}',
+          modelo = '${vehiculo.modelo}',
+          color = '${vehiculo.color}',
+          foto = '${vehiculo.foto}',
+      WHERE id = ${id}`, function(err, recordsets) {
+          console.log(err)
+          connection.close();
+      });
+    });
+  });
+  
+
 /*  enviar carros */
 app.get('/api/carros', function (req, res) {
    
