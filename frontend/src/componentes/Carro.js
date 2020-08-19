@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import BorrarCarroApi from '../actions/borrarCarro';
+import { Link } from 'react-router-dom';
 
 const Carro = props => {
   const { 
@@ -21,7 +22,14 @@ const Carro = props => {
           <li> Linea: {linea}</li>
           <li> Marca: {marca}</li> 
           <li> {modelo}</li>
-          <li><a onClick={borrarCarro}>Eliminar</a></li>  
+          <li><a onClick={borrarCarro}>Eliminar</a></li>
+          <li> <Link to={{
+            pathname: `actualizar/${id}`,
+            actualizarProps: {
+              vehiculo: {vehiculo}              
+            }
+
+          }}>Actualizar</Link></li>  
         </ul>
       </div>
       <img 

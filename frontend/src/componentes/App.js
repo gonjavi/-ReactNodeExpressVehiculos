@@ -5,6 +5,7 @@ import { traerCarros } from '../actions/carroAction';
 import { useDispatch } from 'react-redux';
 import CarroLista from '../contenedores/CarroLista';
 import Grafica from './Grafica';
+import Actualizar from './Actualizar';
 
 function App() {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={CarroLista} />
           <Route path="/grafica" component={Grafica} />
+          <Route path="/actualizar/:id" component={Actualizar} />
         </Switch>
       </BrowserRouter>
       
