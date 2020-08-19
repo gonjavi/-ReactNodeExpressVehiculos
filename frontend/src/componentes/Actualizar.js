@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { actualizar } from '../actions/actualizar';
+import { NavLink } from 'react-router-dom';
 
 const Actualizar = props => { 
   const [linea1, setLinea1] = useState('');
@@ -64,65 +65,68 @@ const Actualizar = props => {
   
 
   return (
-    <Form onSubmit={submitHandler}>
-    <h5>Actualizar Automovil: </h5>    
-      <Form.Row>         
-        <Form.Group as={Col} md="3" controlId="validationCustom01">
-          <Form.Label>Linea</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="linea"
-            onChange={(e) => setLinea1(e.target.value)}
-          />         
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom01">
-          <Form.Label>Marca</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="marca"
-            onChange={(e) => setMarca1(e.target.value)}
-          />         
-        </Form.Group>
-        
-        <Form.Group as={Col} md="3" controlId="validationCustom01">
-          <Form.Label>Modelo</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="modelo"
-            onChange={(e) => setModelo1(e.target.value)}
-          />         
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom01">
-          <Form.Label>Color</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="color"
-            onChange={(e) => setColor1(e.target.value)}
-          />         
-        </Form.Group> 
-        <Form.Group as={Col} md="3">
-            <Form.File
-              className="position-relative"
+    <div>             
+      <NavLink to="/"><h5 className="back">Ir a Inicio</h5></NavLink>   
+      <Form onSubmit={submitHandler}>
+      <h5>Actualizar Automovil: </h5>    
+        <Form.Row>         
+          <Form.Group as={Col} md="3" controlId="validationCustom01">
+            <Form.Label>Linea</Form.Label>
+            <Form.Control
               required
-              name="file"
-              label="Foto"
-              onChange={handleImage}
-              id="validationFormik107"
-              feedbackTooltip
-            />
-        </Form.Group>
-      </Form.Row>
-      <Form.Row>       
-        <Form.Group as={Col} md="3">
-          <Button type="submit">Actualizar</Button>
-        </Form.Group>                
-      
-    </Form.Row>   
-  </Form>
+              type="text"
+              placeholder="linea"
+              onChange={(e) => setLinea1(e.target.value)}
+            />         
+          </Form.Group>
+          <Form.Group as={Col} md="3" controlId="validationCustom01">
+            <Form.Label>Marca</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              placeholder="marca"
+              onChange={(e) => setMarca1(e.target.value)}
+            />         
+          </Form.Group>
+          
+          <Form.Group as={Col} md="3" controlId="validationCustom01">
+            <Form.Label>Modelo</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              placeholder="modelo"
+              onChange={(e) => setModelo1(e.target.value)}
+            />         
+          </Form.Group>
+          <Form.Group as={Col} md="3" controlId="validationCustom01">
+            <Form.Label>Color</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              placeholder="color"
+              onChange={(e) => setColor1(e.target.value)}
+            />         
+          </Form.Group> 
+          <Form.Group as={Col} md="3">
+              <Form.File
+                className="position-relative"
+                required
+                name="file"
+                label="Foto"
+                onChange={handleImage}
+                id="validationFormik107"
+                feedbackTooltip
+              />
+          </Form.Group>
+        </Form.Row>
+        <Form.Row>       
+          <Form.Group as={Col} md="3">
+            <Button type="submit">Actualizar</Button>
+          </Form.Group>                
+        
+      </Form.Row>   
+    </Form>
+    </div>
   );
 }
 

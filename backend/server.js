@@ -93,7 +93,7 @@ app.put('/carro/actualizar/:id',function(req,res){
           marca = '${vehiculo.marca}',
           modelo = '${vehiculo.modelo}',
           color = '${vehiculo.color}',
-          foto = '${vehiculo.foto}',
+          foto = '${vehiculo.foto}'
       WHERE id = ${id}`, function(err, recordsets) {
           console.log(err)
           connection.close();

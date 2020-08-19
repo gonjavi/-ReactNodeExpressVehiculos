@@ -66,10 +66,10 @@ ul.titulo li {
   letter-spacing: normal;
   color: var(--black-three);
 }
-ul.titulo li:last-child {
+ul.titulo li:last-child .borrarActualizar {
   color: #4386bf;;
 }
-ul.titulo li:last-child:hover {
+ul.titulo li:last-child:hover .borrarActualizar:hover {
   color: blue;
   cursor: pointer;
 }
