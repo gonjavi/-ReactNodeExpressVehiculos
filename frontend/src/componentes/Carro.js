@@ -21,7 +21,7 @@ const Carro = props => {
         <ul className="titulo">
           <li> Linea: {linea}</li>
           <li> Marca: {marca}</li> 
-          <li> {modelo}</li>
+          <li> Modelo: {modelo}</li>
           <li className="borrarActualizar"><a className="borrarActualizar" onClick={borrarCarro}>Eliminar</a></li>
           <li className="borrarActualizar"> <Link to={{
             pathname: `actualizar/${id}`,
