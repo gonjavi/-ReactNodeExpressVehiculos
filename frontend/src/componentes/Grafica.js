@@ -42,7 +42,7 @@ const Grafica = props => {
       </Row>
       <Row>
         <Col xs={12} md={12} >         
-          <NavLink to="/" className="back"><h5>volver a Inicio</h5></NavLink>
+          <NavLink to="/" className="back"><h5>Volver a Inicio</h5></NavLink>
         </Col>
       </Row>
       <Row xs={12} className='mt-5'>
