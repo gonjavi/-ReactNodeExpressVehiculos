@@ -50,7 +50,7 @@ class CarroLista extends React.Component {
         </Row>
        <Row>
         <Col xs={12} md={12} >         
-          <NavLink to="/grafica"><h5 className="back">Ir a graficas</h5></NavLink>
+          <NavLink to="/grafica" className="back"><h5 className="back">Ir a graficas</h5></NavLink>
         </Col>
       </Row>
         <Row className='mt-2'>

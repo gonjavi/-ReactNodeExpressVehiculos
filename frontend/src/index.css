@@ -19,6 +19,15 @@ code {
   height: 100%;
 }
 
+.link:hover {
+  text-decoration: none;
+  color: #4386bf;
+}
+.back:hover {
+  text-decoration: none;
+  color: #4386bf;
+}
+
 .footer{
   width: 100%;
   height: 40px;;
@@ -67,10 +76,12 @@ ul.titulo li {
   color: var(--black-three);
 }
 ul.titulo li:last-child .borrarActualizar {
-  color: #4386bf;;
+  text-decoration: none;
+  color: #4386bf;
 }
-ul.titulo li:last-child:hover .borrarActualizar:hover {
-  color: blue;
+.borrarActualizar:hover {
+  text-decoration: none;
+  color: #c46bee;
   cursor: pointer;
 }
 .progress {
