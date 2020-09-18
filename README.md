@@ -45,6 +45,12 @@ create table vehiculos (
 - En el archivo backend/server.js, cambiar las credenciales de usuario en const config.
 
 #### Frontend
+
+- On the cosole got o the folder /frontened using cd frontend
+- Once in the folder run $npm install
+- And then run: $npm start
+- The app will open on the browser in the port 3000
+
 - Entre al folder frontend en el terminal por medio de cd frontend
 - Una vez dentro del folder corra $npm install
 - Seguido de $npm start
