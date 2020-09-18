@@ -51,6 +51,7 @@ create table vehiculos (
 - And then run: $npm start
 - The app will open on the browser in the port 3000
 
+Spanish
 - Entre al folder frontend en el terminal por medio de cd frontend
 - Una vez dentro del folder corra $npm install
 - Seguido de $npm start
